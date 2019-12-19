@@ -25,16 +25,11 @@ M = 16 # Nº de bits 128
 N = 100000 # Amostras 100000
 Columns = int(M/2)
 Rows = int(N/Columns)
-
-#exp = 0
-num = 0
 num_decimal = list()
-#print('M:',M, 'N:',N,)
 
 #generating data of size N
 label = np.random.randint(2,size=[N,M])#[rows, columns]
-label = np.array(label) #desnecessario
-print(label)
+#print(label)
 
 total = ""
 
@@ -53,10 +48,8 @@ for j in range(N):
 	num_decimal.append(total_conv)
 	total=""	
 
-#print(num_decimal)	
 #num_decimal = np.array(num_decimal)
 
 #turning list to tensor
 num_dec = tf.reshape(num_decimal, [Rows,Columns])#[rows, columns]
 print(num_dec)	
-#print(Columns)
